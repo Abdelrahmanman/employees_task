@@ -10,7 +10,6 @@ import { EmployeesService } from 'src/app/core/services/srv1/employees/employees
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'new-app';
   public employees: Array<Employee> = [];
   public showForm: boolean;
   public NotValid: boolean;
