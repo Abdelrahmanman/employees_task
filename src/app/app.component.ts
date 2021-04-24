@@ -119,15 +119,15 @@ export class AppComponent {
   onEmpFormSubmit(){
     // validation
 
-    if(this.employeeForm.invalid){
-      this._snackBar.open("", "All fields are required", {
+    if((this.employeeForm.get('employee_name').hasError('pattern'))){      
+      this._snackBar.open("", "The name should be alphabetic characters", {
         duration: 2000
       });
       return false;
     }
 
-    if((this.employeeForm.get('employee_name').hasError('pattern'))){
-      this._snackBar.open("", "The name should be alphabetic characters", {
+    if(this.employeeForm.invalid){
+      this._snackBar.open("", "All fields are required", {
         duration: 2000
       });
       return false;
