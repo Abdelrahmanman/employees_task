@@ -43,7 +43,7 @@
 <!-- Add || update Employee Form -->
 <form *ngIf="showForm"
     [formGroup] ="employeeForm"            
-    (ngSubmit)="onEmpFormSubmit()"
+    (ngSubmit)="onEmpFormSubmit(employeeForm)"
     class="employee_form" autocomplete="on">
     <!-- start form body -->
     <div class="form-body">
