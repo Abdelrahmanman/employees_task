@@ -1,0 +1,79 @@
+<!--_________header component ________-->
+<app-header></app-header>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+  <!-- Employees listing -->
+  <div class="employees" *ngIf="!showForm">
+    <button (click)="openAddEmployeeDialog()" class="success">Add employee</button>
+    <div class="empData">
+      <table *ngIf="employees.length else noEmp">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employees">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.employee_name }}</td>
+            <td>{{ emp.employee_age }}</td>
+            <td>{{ emp.employee_salary }}</td>
+            <td>
+              <button (click)="openEditEmployeeDialog(emp)" class="primary">Edit</button>
+              <button (click)="deleteEmployee(emp.id)" class="danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #noEmp>
+      <div class="emptyList">The employees list is empty</div>
+     </ng-template>
+  </div>
+</div>
+
+
+<!-- Add || update Employee Form -->
+<form *ngIf="showForm"
+    [formGroup] ="employeeForm"            
+    (ngSubmit)="onEmpFormSubmit()"
+    class="employee_form" autocomplete="on">
+    <!-- start form body -->
+    <div class="form-body">
+      <input id="employee_id" type="hidden" class="form-control" formControlName="employee_id">
+      <div class="form-control">
+        <input id="employee_name" type="text" class="form-control" placeholder="Name" formControlName="employee_name">
+      </div>
+
+      <div class="form-control">
+        <input id="employee_salary" type="number" class="form-control" placeholder="Salary" formControlName="employee_salary">
+      </div>
+
+      <div class="form-control">
+        <input id="employee_age" type="number" class="form-control" placeholder="Age" formControlName="employee_age">
+      </div>
+      
+      <!-- submit form row-->
+      <div class="row g-2">        
+          <div class="col-12 d-flex justify-content-end">
+              <button class="success" type="submit">
+                  Save
+              </button>
+              <button class="success cancel" (click)="cancelTheForm()">Cancel</button>
+          </div>
+
+      </div>
+    </div>
+    <!-- end form body -->
+</form>
+
+
+<!--_______ footer component ________-->
+<app-footer></app-footer>

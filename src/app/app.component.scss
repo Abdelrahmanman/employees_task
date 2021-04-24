@@ -1,0 +1,138 @@
+// Employee listing | The table
+    .employees, .employee_form{
+        width: 80%;
+        margin: 0 auto
+    }
+
+    .employees .empData{
+        overflow-x:auto;
+    }
+
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    table th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    
+    table tr:nth-child(even){
+        background-color: #f2f2f2
+    }
+
+    tr:hover{
+        background-color: #f2f2f2
+    }
+
+    table thead tr {
+        height: 60px;
+        background: #36304a;
+    }
+
+    table th{
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.2;
+        font-weight: unset;
+    }
+
+    table tbody tr {
+        height: 50px;
+    }
+
+
+
+
+
+// Add || update employee form
+    .employee_form{
+        text-align: center;
+    }
+
+    .employee_form input{
+        display: block;
+        padding: 15px 20px;
+        width: 300px;
+        margin: 20px auto;
+        background: transparent;
+        outline: 0;
+        border: 1px solid #fff;
+        border-radius: 5px;
+    }
+
+
+    .employee_form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #ddd;
+        opacity: 1; /* Firefox */
+    }
+
+    .employee_form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #ddd;
+    }
+
+    .employee_form input::-ms-input-placeholder { /* Microsoft Edge */
+        color: #ddd;
+    }
+
+    .emptyList{
+        text-align: center;
+        color: white;
+        font-family: sans-serif;
+        border-top: 1px solid #797979;
+        padding: 20px;
+    }
+
+
+
+// globals
+// == buttons
+    button{
+        border: 0;
+        padding: 4px 12px;
+        color: white;
+        border-radius: 4px;
+        margin: 2px;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+    }
+
+    button.danger{
+        background: #b80000;
+        border: 1px solid #b80000;
+    }
+
+    button.primary{
+        background: #5656bb;
+        border: 1px solid #5656bb;
+    }
+
+    button.success{
+        background: white;
+        width: 150px;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #fff;
+        color: black;
+        font-weight: bold;
+    }
+
+    button.cancel{
+        background-color: transparent;
+        color: white;
+    }
+
+
+    button:hover{
+        transform: translateY(-3px);
+    }
